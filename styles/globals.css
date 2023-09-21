@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@layer components {
+  /* .brick {
+    @apply
+  } */
+
+  .brick-container{
+    --width: 0;
+    --size: 0;
+    height: 100%;
+    width: var(--width);
+
+
+  }
+  .brick {
+    --order: 0;
+    --position: 0;
+    --height: 0;
+    --brick-width: calc(var(--width) / var(--size));
+    position: absolute;
+    animation-name: drop, fadeIn;
+    animation-duration: 1.5s, calc(1.5s * (var(--order)));
+    animation-delay: calc(750ms * var(--order)), 0s;
+    animation-timing-function: ease-in-out;
+    width: var(--brick-width);
+    bottom: calc(185/365*var(--brick-width)*var(--height));
+    left: calc(var(--brick-width)*var(--position)/4);
+    margin-bottom: calc(var(--height) * -1 * (20/165)*185/365*var(--brick-width));
+
+
+  }
+
+  .lego-outline{
+  -webkit-text-stroke: 2px black;
+  }
+
+  @keyframes drop {
+    0% {transform: translateY(-100px)}
+    100% {transform: translateY(0)}
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    50% {opacity: 0}
+    100% {opacity: 1}
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
