@@ -8,8 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      margin: {
-        help: "calc(var(--help) + 5px)"
+
+      containers: {
+        '2xs': '14rem'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -30,6 +31,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animation-delay"),],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+    require('@tailwindcss/container-queries'),
+  ],
+
 }
 export default config

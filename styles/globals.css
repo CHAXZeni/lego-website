@@ -32,15 +32,13 @@
     animation-delay: calc(750ms * var(--order)), 0s;
     animation-timing-function: ease-in-out;
     width: var(--brick-width);
-    bottom: calc(185/365*var(--brick-width)*var(--height));
+    bottom: calc(180/370*var(--brick-width)*var(--height));
     left: calc(var(--brick-width)*var(--position)/4);
-    margin-bottom: calc(var(--height) * -1 * (20/165)*185/365*var(--brick-width));
-
-
+    margin-bottom: calc(var(--height) * -1 * (20/155)*180/370*var(--brick-width));
   }
 
   .lego-outline{
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 2.5px black;
   }
 
   @keyframes drop {
